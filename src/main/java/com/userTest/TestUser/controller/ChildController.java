@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,7 +23,7 @@ public class ChildController {
     @Autowired
     UserService userService;
     @PostMapping("/{id}")
-    public ResponseEntity<ChildEntity> saveChild(@Validated @RequestBody ChildEntity child , @PathVariable("id") Long id) {
+    public ResponseEntity<ChildEntity> saveChild(@Valid @RequestBody ChildEntity child , @PathVariable("id") Long id) {
         Optional<UserEntity> user=userService.getUserById(id);
         return new ResponseEntity<ChildEntity>(childService.saveChild(child, id),HttpStatus.CREATED);
     }
