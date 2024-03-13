@@ -43,7 +43,7 @@ public class userController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<UserEntity> actualizarUser(@PathVariable("id") long userId,@RequestBody UserEntity userEntity){
+    public ResponseEntity<UserEntity> actualizarUser(@PathVariable("id") long userId,@Valid @RequestBody UserEntity userEntity){
         return userService.getUserById(userId)
                 .map(userGuardado-> {
                     userGuardado.setName(userEntity.getName());
