@@ -25,10 +25,12 @@ public class UserEntity {
 
     @Column(name = "Apellido", nullable = false)
     private String lastName;
+
     @Email(message = "El correo electrónico debe ser válido")
     @Pattern(regexp = "^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", message = "El correo electrónico no cumple con el formato requerido")
     @Column(name = "Email", nullable = false)
     private String email;
+
     @Column(name = "Fecha nacimiento", nullable = false)
     private String born;
     @Column(name = "Telefono", nullable = false)
