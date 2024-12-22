@@ -31,6 +31,7 @@ public class UserServicioTest {
     private UserRepository userRepository;
     @InjectMocks
     private UserServiceImpl userService;
+    
 //------------------------------------------
     private UserEntity user1;
     @BeforeEach
