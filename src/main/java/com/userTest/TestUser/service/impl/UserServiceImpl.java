@@ -34,7 +34,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Optional<UserEntity> getUserById(Long id) {
-        return userRepository.findById(id);
+        return Optional.ofNullable(userRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException(" este usuario on id no exte")));
     }
 
     @Override

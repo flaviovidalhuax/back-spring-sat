@@ -21,7 +21,7 @@ public class userController {
 
     @Autowired
     private UserEntity userEntity;
-    @PostMapping
+    @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
     public UserEntity GuardarUSer(@Valid @RequestBody UserEntity userEntity){
             return userService.saveUser(userEntity);
